@@ -1,0 +1,29 @@
+<com:TContent ID="body">
+  <div class="post">
+    <h2 class="title"><b>Bienvenidos al Bingo Solidario</b></h2>
+    <div class="entry">
+      <div align="center"><img src="images/transparentbig.gif" alt=""  /> </div>
+    </div>
+    <div class="meta">
+      <p class="links">
+        <com:TLinkButton CssClass="more" Text="reiniciar bingo" OnClick="lnkResetBingo_OnClick"></com:TLinkButton>
+      </p>
+    </div>
+  </div>
+</com:TContent>
+<com:TContent ID="sideBar">
+  <ul>
+    <li id="search">
+      <h2><b class="text1" >seleccionar juego:</b></h2>
+      <com:TDropDownList ID="ListaDeJuegos" DataValueField="idjuego" DataTextField="nombre"></com:TDropDownList>&nbsp;
+      <com:TButton ID="btnJugar" Text="Jugar" OnClick="btnJugar_OnClick" CssClass="more"/>
+    </li>
+    <li>
+      <h2>&nbsp;</h2>
+    </li>
+    <li>
+      <h2>&nbsp;</h2>
+    </li>
+    <li></li>
+  </ul>
+</com:TContent>

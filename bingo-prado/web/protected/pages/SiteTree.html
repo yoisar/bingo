@@ -1,0 +1,86 @@
+<html><HEAD><meta http-equiv="content-type" content="text/html; charset=utf-8"><STYLE>a{font-family:arial;font-size:10pt;text-decoration:none;color:#000099}</STYLE></HEAD>
+<BODY style='background-color:#EEEEFF'>
+<A href=# onclick='parent.CloseSitemap()' style='font-size:8pt'>Close Frames</A><br><br>
+
+<script LANGUAGE="JavaScript">
+image1 = new Image();
+image1.src = 'Resources/plus.gif';
+
+function CloseSitemap()
+{
+	parent.URL = parent.mainFrame.URL
+}
+
+function ToggleDiv(node, id)
+{
+	sibling = document.getElementById(id);
+	if (sibling.style.display == 'none')
+	{
+		if (node.children.length > 0)
+		{
+			if (node.children.item(0).tagName == "IMG")
+			{
+				node.children.item(0).src = "Resources/minus.gif";
+			}
+		}
+
+		sibling.style.display = '';
+	}
+	else
+	{
+		if (node.children.length > 0)
+		{
+			if (node.children.item(0).tagName == "IMG")
+			{
+				node.children.item(0).src = "Resources/plus.gif";
+			}
+		}
+		sibling.style.display = 'none';
+	}
+}
+
+var currentPage = null;
+
+function highlight(id)
+{
+	if (currentPage != null)
+	{
+		currentPage.style.backgroundColor = '#EEEEFF';
+		currentPage.style.paddingLeft = '0px';
+		currentPage.style.paddingRight = '0px';
+		currentPage.style.border = '0px solid #666666';
+	}
+	
+	currentPage = document.getElementById(id);
+    if (currentPage) {
+	    currentPage.style.backgroundColor = '#DDDDDD';
+	    currentPage.style.paddingLeft = '3px';
+	    currentPage.style.paddingRight = '3px';
+	    currentPage.style.border = '1px solid #666666';
+    }
+}
+
+</script>
+<TABLE BORDER="0" cellspacing="0" cellpadding="0">
+	<TR>
+		<TD nowrap><A onClick="ToggleDiv(this, 'dee87f086e57d44d292a8934a87154646')"><img src="/bingo/images/Resources/minus.gif"></A>&nbsp;&nbsp;<A href="StandByPage.html" target="mainFrame"><img style="margin-top:3px; margin-bottom:3px; margin-right:5px" src="/bingo/images/Resources/page.gif" align=absMiddle border=0><SPAN id="pee87f086e57d44d292a8934a87154646">Home</SPAN></A><div id="dee87f086e57d44d292a8934a87154646">
+<TABLE BORDER="0" cellspacing="0" cellpadding="0">
+	<TR>
+		<TD WIDTH="30" nowrap>&nbsp;</TD>
+		<TD nowrap><A href="Jugar.html" target="mainFrame"><img style="margin-top:3px; margin-bottom:3px; margin-right:5px" src="/bingo/images/Resources/page.gif" align=absMiddle border=0><SPAN id="p2e08bf035c794cbf84a52bddc7169428">Juego</SPAN></A><div id="td2e08bf035c794cbf84a52bddc7169428">
+			</div>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE BORDER="0" cellspacing="0" cellpadding="0">
+	<TR>
+		<TD WIDTH="30" nowrap>&nbsp;</TD>
+		<TD nowrap><A href="Home.html" target="mainFrame"><img style="margin-top:3px; margin-bottom:3px; margin-right:5px" src="/bingo/images/Resources/page.gif" align=absMiddle border=0><SPAN id="p99b8a763e1af4ba7bf4cc4367c82751d">Pantalla en blanco</SPAN></A><div id="td99b8a763e1af4ba7bf4cc4367c82751d">
+			</div>
+		</TD>
+	</TR>
+</TABLE>
+			</div>
+		</TD>
+	</TR>
+</TABLE></body></html>

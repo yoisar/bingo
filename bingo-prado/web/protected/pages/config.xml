@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<configuration>
+  <paths>    
+    <using namespace="Application.pages.*" />
+  </paths>
+   <pages MasterClass="MasterTemplate" Theme="flashweb"/>
+</configuration>

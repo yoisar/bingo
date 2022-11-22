@@ -1,0 +1,95 @@
+<com:TContent ID="body">
+  <div class="post">
+    <h2 class="title"><b>Bingo solidario: Juego n&uacute;mero <%= $this->session['gameNumber']%> </b></h2>
+    <!--<div class="meta">-->
+    <com:TPanel ID="PnlBola" CssClass="meta">
+      <table width="100%" border="0" cellspacing="4" cellpadding="4">
+        <tr>
+          <td align="center"><table id="ball" width="100%" border="0" cellspacing="4" cellpadding="4"  style="background-image:url(images/whiteBall.gif);background-repeat:no-repeat;text-align:center;width:226px;height:232px;font-size:60px;color:#000000">
+              <tr>
+                <td><!--Numero sacado actual-->
+                  <com:TLabel ID="CurrentNumber" Text="85"/></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align="center"><!--Opcion de sacar numeros-->
+            <com:TLinkButton CssClass="more" TabIndex="0" ID="BtnSacarNumero" OnClick="sacarNumero" Text="Sacar n&uacute;mero"/>
+          </td>
+        </tr>
+      </table>
+    </com:TPanel>
+    <!--</div>-->
+  </div>
+  <!--Panel para datos ganadores-->
+  <com:TPanel ID="DatosGanador" Visible="false">Tipo
+    de juego:
+    <com:TDropDownList ID="LisaTipoJuego" DataTextField="nombre" DataValueField="idjuego_tipo" Style="font-family:'Aardvark'; color:#000000; font-size:15pt;" ></com:TDropDownList>
+    <com:TTextBox ID="cantidad" Columns="5" Style="font-family:'Aardvark'; color:#000000; font-size:15pt;"></com:TTextBox>
+    <com:TRequiredFieldValidator ControlToValidate="cantidad" ErrorMessage="*" Text="*" ValidationGroup="vg_ganador" EnableClientScript="true"></com:TRequiredFieldValidator>
+    <com:TDataTypeValidator ControlToValidate="cantidad" DataType="Integer" ErrorMessage="*" ValidationGroup="vg_ganador" EnableClientScript="true"></com:TDataTypeValidator>
+    <com:TButton ID="BtnAgregaGanador"  Text="Agregar" ValidationGroup="vg_ganador" EnableClientScript="true" CausesValidation="true" Style="font-family:'Aardvark'; color:#000000; font-size:15pt;" OnClick="insertWinner"> </com:TButton>
+    <br>
+    <com:TDataGrid AutoGenerateColumns="false" ID="WinnerList" DataKeyField="id" OnDeleteCommand="deleteWinner">
+      <com:TBoundColumn        
+        HeaderText="Tipo"
+        HeaderStyle.Width="150px"
+        DataField="idjueto_tipo"
+        />
+      <com:TBoundColumn        
+        HeaderText="Cantidad"
+        HeaderStyle.Width="150px"
+        DataField="cantidad"
+        />
+      <com:TButtonColumn
+        ID="DeleteColumn"
+        HeaderText="Delete"
+        HeaderStyle.Width="50px"
+        ItemStyle.HorizontalAlign="Center"
+        ItemStyle.Font.Italic="false"
+        Text="Eliminar"
+        CommandName="delete"
+        />
+    </com:TDataGrid>
+    <br>
+    <com:TButton ID="terminarJuego" Text="Terminar juego" OnClick="finishGame" Style="font-family:'Aardvark'; color:#000000; font-size:15pt;"></com:TButton>
+  </com:TPanel>
+</com:TContent>
+<!--Lateral-->
+<com:TContent ID="sideBar">
+  <com:TPanel id="PnlTarjeta" CssClass="entry" >
+    <div id="meta">
+      <p style="text-align:center"><img src="images/transparent.gif" /></p>
+    </div>
+    <h2><b class="text1">
+      <com:TLabel ID="NumerosSorteados" Text="0" />
+      &nbsp;n&uacute;mero(s) sorteados</b></h2>
+    <!--TARJETA-->
+    <com:TDataList 
+	ID="Tarjeta" 
+	RepeatColumns="10" 	
+	Style="color:#000000;
+	font-weight:bolder" 
+	ItemStyle.ForeColor="#000000"	
+    ItemStyle.BackColor="#BFCFFF" 
+    HeaderStyle.BackColor="black"    
+    AlternatingItemStyle.BackColor="#E6ECFF">
+      <prop:HeaderTemplate> </prop:HeaderTemplate>
+      <prop:ItemTemplate>
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td  style="background-repeat:no-repeat; width:40px;height:40px;font-family:'Aardvark'; color:#FF0000; font-size:18pt;"><%% if ($this->Data->visible==1) {echo "&nbsp;{$this->Data->numero}";}else{ echo "&nbsp;";} %>
+            </td>
+          </tr>
+        </table>
+      </prop:ItemTemplate>
+    </com:TDataList>
+  </com:TPanel>
+  <div id="menu">
+    <ul>
+      <li>
+        <com:TLinkButton ID="BtnTerminarJuego"  Text="Terminar juego" OnClick="BtnTerminarJuego_OnClick"/>
+      </li>
+    </ul>
+  </div>
+</com:TContent>

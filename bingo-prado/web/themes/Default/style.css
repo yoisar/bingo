@@ -1,0 +1,10 @@
+/* CSS Document */
+body{
+font-family:Verdana, Arial, Helvetica, sans-serif; }
+select {
+width: 110px;
+font-size:94%;
+border: 1px solid #ccc;
+}
+
+.titulo{color:#000000; font-size:38pt;}

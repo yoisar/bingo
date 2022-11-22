@@ -1,0 +1,6 @@
+.DS_Store
+bingo-prado/database
+bingo-prado/web/assets
+.svn
+*.db
+*.zpj

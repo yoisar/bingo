@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by gandalf (sdw) -->
+<sqlMapConfig>
+	<sqlMaps>
+		<!-- Relative path from the directory of the     current file using a property variable -->
+		<sqlMap resource="./maps/bingo.xml"/>
+	</sqlMaps>
+</sqlMapConfig>

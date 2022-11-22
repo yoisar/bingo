@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by gandalf (sdw) -->
+<sqlMap>
+	<!--Actualizar juegos-->
+	<update id="inicializa_juegos">
+update juego set numeros_sorteados=0 where numeros_sorteados &gt;  0;
+      </update>
+	<!--limpiar tarjetas-->
+	<statement id="limpia_tarjetas">
+truncate tarjetas;
+      </statement>
+	<!--Devuelve cantidad de numeros distrobuidos-->
+	<select id="total_distribuidos" resultClass="array" parameterClass="integer">
+select count(idjuego) total from tarjeta  where idjuego=#value#;
+      </select>
+</sqlMap>

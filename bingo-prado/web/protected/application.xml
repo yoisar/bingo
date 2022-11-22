@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by xavier (x-man) -->
+<application id="bingo" mode="Debug">
+	<!-- alias definitions and namespace usings-->
+	<paths>
+		<alias id="Core" path="./Core/"/>
+		<alias id="DataModel" path="./Core/DataModel/"/>
+		<using namespace="Core.*"/>
+		<using namespace="DataModel.*"/>
+		<using namespace="System.Data.*"/>
+		<using namespace="System.Data.SqlMap.*"/>
+		<using namespace="System.Data.SqlMap.Configuration.*"/>
+		<using namespace="System.Data.SqlMap.DataMapper.*"/>
+		<using namespace="System.Data.SqlMap.Statements.*"/>
+		<using namespace="System.Data.ActiveRecord.*"/>
+		<using namespace="System.Data.SqlMap.Statements.*"/>
+		<using namespace="System.Web.UI.ActiveControls.*"/>
+	</paths>
+	<!-- configurations for modules -->
+	<modules>
+		<module id="session" class="THttpSession" SessionName="SSID" CookieMode="Allow" UseCustomStorage="false" AutoStart="true" GCProbability="1" UseTransparentSessionID="true" TimeOut="30"/>
+		<!--Connecion-->
+		<module class="System.Data.TDataSourceConfig" id="db1">
+			<database ConnectionString="mysql:host=bingo_p_php_mysql;dbname=bingo" Username="root" Password="root"/>
+		</module>
+		<module class="System.Data.ActiveRecord.TActiveRecordConfig" ConnectionID="db1"/>
+		<!--SQLMap-->
+		<module id="my-sqlmap" class="System.Data.SqlMap.TSqlMapConfig" ConfigFile="Application.SqlMapConfig" ConnectionID="db1" EnableCache="true"/>
+		<!--EnableCache="true"-->
+		<module id="bingo" class="Bingo"/>
+		<!-- Remove this comment mark to enable caching 
+    <module id="cache" class="System.Caching.TDbCache" />-->
+   
+		<!-- Remove this comment mark to enable PATH url format
+    <module id="request" class="THttpRequest" UrlFormat="Path" />
+    -->
+		<!-- Remove this comment mark to enable logging
+    <module id="log" class="System.Util.TLogRouter">
+      <route class="TBrowserLogRoute" Categories="System" />
+    </module>
+    -->
+	</modules>
+	<!-- configuration for available services -->
+	<services>
+		<service id="page" class="TPageService" DefaultPage="Home"/>
+	</services>
+	<!-- application parameters
+  <parameters>
+    <parameter id="param1" value="value1" />
+    <parameter id="param2" value="value2" />
+  </parameters>
+  -->
+</application>
