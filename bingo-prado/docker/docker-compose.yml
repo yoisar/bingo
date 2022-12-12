@@ -1,5 +1,5 @@
 version: "3.9"
-name: default
+name: bingo_prado
 services:
   bingo_p_nginx_default:
     container_name: bingo_p_nginx_default
