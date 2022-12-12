@@ -1,5 +1,5 @@
 ## Simple Bingo
-I develop it in 2007. This app was developed for the solidarity events of Rotary Club Posadas Oeste en Posadas, Misiones, Argentina.
+This app was developed in 2007 for the solidarity events of Rotary Club Posadas Oeste en Posadas, Misiones, Argentina.
  This app, simulates the lottery drum showing random numbers from 1 to 100. 
  It was developed using the Prado Framework (https://github.com/yoisar/prado)
  
@@ -8,3 +8,8 @@ I develop it in 2007. This app was developed for the solidarity events of Rotary
 - enter to docker folder
 - type docker compose up -d --build
 - open http://localhost:8060
+
+## Requirements
+- PHP 8.0.25
+- mariadb:10.6
+- Prado Framework V 3.2.4
