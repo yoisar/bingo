@@ -34,7 +34,7 @@
   <!-- end page --> 
   <!-- start footer -->
   <div id="footer">
-    <p id="legal"><a href="http://www.zoomtecnologias.com/" title="Zoom Tecnologías"><img src="/developers/logo_zoomtecnologias.png" width="185" height="50" alt="Mi Facuturero"  /></a>&nbsp;  <a href="https://www.mifacturero.com.ar/" title="Mi Facturero"><img src="/developers/logo_mf_nuevo.png" width="185" height="50" alt="Mi Facuturero"  /></a> </p>
+    <p id="legal"><a href="http://www.zoomtecnologias.com/" title="Zoom Tecnologías"><img src="/developers/logo_zoomtecnologias.png" width="185" height="50" alt="Mi Facuturero"  /></a> </p>
   </div>
   <!-- end footer --> 
 </com:TForm>
